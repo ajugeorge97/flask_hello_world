@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Flask Image Upload</title>
+    <script> 
+        const BACKEND_URL = "{{ backend_url }}";
+    </script>
+</head>
+<body>
+    <h1>Upload an Image</h1>
+
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" id="imageFile" name="image" required>
+        <input type="text" id="name" name="name" placeholder="Enter name for this ">
+        <button type="submit">Upload</button>
+    </form>
+
+    <p id="message"></p>
+
+    <h2>Uploaded Images</h2>
+    <div class="image-container" id="imageList"></div>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>
