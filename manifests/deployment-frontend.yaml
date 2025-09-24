@@ -2,22 +2,22 @@ apiVersion: apps/v1
 
 kind: Deployment
 metadata:
-  name: flask-deployment
+  name: front-end-deployment
   labels:
-    app: flask
+    app: front-end
 
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: flask
+      app: front-end
   template:
     metadata:
       labels:
-        app: flask
+        app: front-end
     spec:
       containers:
-        - name: flaskapp
-          image: "flask_app:0.0.1"
+        - name: front-end
+          image: "uploader-frontend:0.0.1"
           ports:
-            - containerPort: 5000
+            - containerPort: 80

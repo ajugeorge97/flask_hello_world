@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, Link, useNavigate } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import UploadForm from "./components/UploadForm";
 import ImagesPage from "./components/ImagesPage";
 
@@ -11,7 +11,7 @@ function App() {
       </nav>
 
       <Routes>
-        <Route path="/" element={<UploadFormWithNav />} />
+        <Route path="/" element={<UploadForm />} />
         <Route path="/images" element={<ImagesPage />} />
       </Routes>
     </Router>
@@ -19,9 +19,9 @@ function App() {
 }
 
 // Optional wrapper to navigate after upload
-function UploadFormWithNav() {
-  const navigate = useNavigate();
-  return <UploadForm onUploadSuccess={() => navigate("/images")} />;
-}
+// function UploadFormWithNav() {
+//   const navigate = useNavigate();
+//   return <UploadForm onUploadSuccess={() => navigate("/images")} />;
+// }
 
 export default App;
