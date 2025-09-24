@@ -2,7 +2,7 @@ apiVersion: apps/v1
 
 kind: Deployment
 metadata:
-  name: flaskapp
+  name: flask-deployment
   labels:
     app: flask
 
