@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-const BACKEND_URL = "http://127.0.0.1:5001";
+export const BACKEND_URL = import.meta.env.BACKEND_URL || "http://127.0.0.1:5001";
 
 export default function ImagesPage() {
   const [images, setImages] = useState<string[]>([]);
