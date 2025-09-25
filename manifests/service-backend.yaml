@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: uploader-backend-service
+spec:
+  selector:
+    app: back-end
+  type: ClusterIP
+  ports:
+    - targetPort: 5001
+      port: 5001

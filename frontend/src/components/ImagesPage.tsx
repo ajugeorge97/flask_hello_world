@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 
-export const BACKEND_URL = import.meta.env.BACKEND_URL || "http://127.0.0.1:5001";
+
+export const BACKEND_URL = '/api'
+console.log(BACKEND_URL)
 
 export default function ImagesPage() {
   const [images, setImages] = useState<string[]>([]);
 
   useEffect(() => {
-    fetch(`${BACKEND_URL}/api/images`) // Your Flask route returning JSON { images: [...] }
+    fetch(`${BACKEND_URL}/images`) // Your Flask route returning JSON { images: [...] }
       .then(res => res.json())
       .then(data => setImages(data.images || []))
       .catch(err => console.error(err));
@@ -18,7 +20,7 @@ export default function ImagesPage() {
       <table style={{ width: "100%", borderCollapse: "collapse" }}>
         <thead>
           <tr>
-            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Thumbnail</th>
+            <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Thumbnail</th> 
             <th style={{ border: "1px solid #ccc", padding: "0.5rem" }}>Filename</th>
           </tr>
         </thead>

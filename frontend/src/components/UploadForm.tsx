@@ -1,6 +1,7 @@
 import { useState } from "react";
 
-export const BACKEND_URL = import.meta.env.BACKEND_URL || "http://127.0.0.1:5001";
+export const BACKEND_URL = '/api'
+console.log(BACKEND_URL)
 
 export default function UploadForm() {
   const [name, setName] = useState("");
@@ -17,7 +18,7 @@ export default function UploadForm() {
     formData.append("filename", name);
 
     try {
-      const res = await fetch(`${BACKEND_URL}/api/upload`, {
+      const res = await fetch(`${BACKEND_URL}/upload`, {
         method: "POST",
         body: formData,
       });
