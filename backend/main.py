@@ -17,7 +17,7 @@ def hello():
 
 
 
-@app.route("/uploads/<filename>")
+@app.route("/api/uploads/<filename>")
 def serve_image(filename):
     return send_from_directory(DATA_LOCATION, filename)
 
