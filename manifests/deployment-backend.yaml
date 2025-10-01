@@ -21,3 +21,10 @@ spec:
           image: "uploader-backend:0.0.3"
           ports:
             - containerPort: 5001
+          volumeMounts:
+            - mountPath: /app/uploaded_data
+              name: mypd
+      volumes:
+        - name: mypd
+          persistentVolumeClaim:
+            claimName: mypvc
