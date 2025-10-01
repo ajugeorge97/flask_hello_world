@@ -18,7 +18,7 @@ spec:
     spec:
       containers:
         - name: front-end 
-          image: "uploader-frondend:0.0.3"
+          image: "uploader-frontend:0.0.4"
           ports:
             - containerPort: 80
           envFrom:

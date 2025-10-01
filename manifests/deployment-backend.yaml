@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
         - name: back-end
-          image: "uploader-backend:0.0.1"
+          image: "uploader-backend:0.0.3"
           ports:
             - containerPort: 5001
