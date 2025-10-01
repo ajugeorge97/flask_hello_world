@@ -1,8 +1,0 @@
-apiVersion: v1
-kind: ConfigMap
-metadata: 
-  name: back-end-config
-
-data:
-  VITE_BACKEND_URL: http://uploader-backend-service:5001
-
