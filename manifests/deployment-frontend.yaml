@@ -21,6 +21,3 @@ spec:
           image: "uploader-frontend:0.0.4"
           ports:
             - containerPort: 80
-          envFrom:
-            - configMapRef:
-                name: back-end-config
