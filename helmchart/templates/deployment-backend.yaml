@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+
+kind: Deployment
+metadata:
+  name: {{ .Values.appName }}-backend
+  labels:
+    app: {{ .Values.appName }}-backend
+
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ .Values.appName }}-backend
+  template:
+    metadata:
+      labels:
+        app: {{ .Values.appName }}-backend
+    spec:
+      containers:
+        - name: {{ .Values.appName }}-backend
+          image: {{ .Values.backend.image }}
+          ports:
+            - containerPort: 5001
+          volumeMounts:
+            - mountPath: /app/uploaded_data
+              name: mypd
+      volumes:
+        - name: mypd
+          persistentVolumeClaim:
+            claimName: mypvc

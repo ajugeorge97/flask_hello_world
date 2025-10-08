@@ -1,0 +1,10 @@
+appName: simple-uploader
+
+backend:
+  image: "uploader-backend:0.0.3"
+
+frontend:
+  image: "uploader-frontend:0.0.4"
+
+pvc:
+  storage: 1Gi
